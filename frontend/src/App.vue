@@ -31,7 +31,7 @@ export default {
 html,
 body {
   height: 100%;
-  font-family: "Playfair Display", serif;
+  font-family: "Roboto", serif;
 }
 
 .btn:focus {

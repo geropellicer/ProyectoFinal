@@ -16,6 +16,7 @@ class Cancha(models.Model):
     tiene_vestuario = models.BooleanField(default=False)
     tiene_iluminacion = models.BooleanField(default=False)
     tiene_cesped_sintetico = models.BooleanField(default=False)
+    descripcion = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.nombre

@@ -1,26 +1,35 @@
 <template>
   <div class="home">
     <div class="container mt-2">
-      <div v-for="question in questions"
-           :key="question.pk">
-        <p class="mb-0">Posted by:
-          <span class="question-author">{{ question.author }}</span>
-        </p>
+      <div v-for="cancha in canchas"
+           :key="cancha.pk">
+
+            <div class="card w-100">
+              <div class="card-body">
+                <h5 class="card-title">{{ cancha.nombre }}</h5>
+                <h6 v-if=" cancha.tipo == '7ABIERTA'" class="card-subtitle mb-2 text-muted">Cancha de 7 Abierta</h6>
+                <h6 v-if=" cancha.tipo == '5ABIERTA'" class="card-subtitle mb-2 text-muted">Cancha de 5 Abierta</h6>
+                <h6 v-if=" cancha.tipo == '7CERRADA'" class="card-subtitle mb-2 text-muted">Cancha de 7 Cerrada</h6>
+                <h6 v-if=" cancha.tipo == '5CERRADA'" class="card-subtitle mb-2 text-muted">Cancha de 5 Cerrada</h6>
+                <h6 v-if=" cancha.tipo == '11'" class="card-subtitle mb-2 text-muted">Cancha de fútbol 11</h6>
+                <p class="card-text">{{ cancha.descripcion}}</p>
+                
+                <div v-if="cancha">
+                    <router-link :to="{ name: 'cancha', params: { id: cancha.id }}">Ver detalles</router-link>
+                </div>
+                
+              </div>
+            </div>
+
         <h2>
-          <router-link
-            :to="{ name: 'question', params: { slug: question.slug } }"
-            class="question-link"
-            >{{ question.content }}
-          </router-link>
+          
         </h2>
-        <p>Answers: {{ question.answers_count }}</p>
-        <hr>
       </div>
       <div class="my-4">
         <p v-show="loadingQuestions">...loading...</p>
         <button
           v-show="next"
-          @click="getQuestions"
+          @click="getCanchas"
           class="btn btn-sm btn-outline-success"
           >Load More
         </button>
@@ -35,22 +44,22 @@ export default {
   name: "home",
   data() {
     return {
-      questions: [],
+      canchas: [],
       next: null,
       loadingQuestions: false
     }
   },
   methods: {
-    getQuestions() {
+    getCanchas() {
       // make a GET Request to the questions list endpoint and populate the questions array
-      let endpoint = "/api/questions/";
+      let endpoint = "/apic/canchas/";
       if (this.next) {
         endpoint = this.next;
       }
       this.loadingQuestions = true;
       apiService(endpoint)
         .then(data => {
-          this.questions.push(...data.results)
+          this.canchas.push(...data.results)
           this.loadingQuestions = false;
           if (data.next) {
             this.next = data.next;
@@ -61,8 +70,8 @@ export default {
     }
   },
   created() {
-    this.getQuestions()
-    document.title = "Proyecto Final";
+    this.getCanchas()
+    document.title = "Canchas Cancheras";
   }
 };
 </script>
