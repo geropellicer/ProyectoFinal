@@ -6,12 +6,9 @@
             <div class="card w-100">
               <div class="card-body">
                 <h5 class="card-title">{{ this.cancha.nombre }}</h5>
-                <h6 v-if=" cancha.tipo == '7ABIERTA'" class="card-subtitle mb-2 text-muted">Cancha de 7 Abierta</h6>
-                <h6 v-if=" cancha.tipo == '5ABIERTA'" class="card-subtitle mb-2 text-muted">Cancha de 5 Abierta</h6>
-                <h6 v-if=" cancha.tipo == '7CERRADA'" class="card-subtitle mb-2 text-muted">Cancha de 7 Cerrada</h6>
-                <h6 v-if=" cancha.tipo == '5CERRADA'" class="card-subtitle mb-2 text-muted">Cancha de 5 Cerrada</h6>
-                <h6 v-if=" cancha.tipo == '11'" class="card-subtitle mb-2 text-muted">Cancha de fútbol 11</h6>
-                <p class="card-text">{{ cancha.descripcion}}</p>
+                <h6>{{ this.cancha.tipo }}</h6>
+                <span>Cod. Interno: {{ this.cancha.codigo }}</span>
+                <p class="card-text mt-3">{{ cancha.descripcion}}</p>
                 
                 <div class="form-check">
                     <input readonly="true" disabled  class="form-check-input" type="checkbox" :checked="cancha.tiene_vestuarios" id="defaultCheck1">

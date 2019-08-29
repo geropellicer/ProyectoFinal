@@ -7,6 +7,12 @@
         >Canchitas Cancheras
       </router-link>
 
+      <router-link 
+        :to="{ name: 'logout' }" 
+        class="desloguearse"
+        >Log Out
+      </router-link>
+
     </div>
   </nav>
 </template>

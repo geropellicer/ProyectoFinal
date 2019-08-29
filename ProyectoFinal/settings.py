@@ -53,9 +53,6 @@ INSTALLED_APPS = [
     'webpack_loader',
 
     'usuarios',
-    'questions',
-
-    'mensajeria',
 
     'canchas',
 ]

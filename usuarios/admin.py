@@ -11,5 +11,3 @@ class UsuarioAdmin(UserAdmin):
 
 
 admin.site.register(Usuario, UsuarioAdmin)
-admin.site.register(Amistad)
-admin.site.register(Solicitud)

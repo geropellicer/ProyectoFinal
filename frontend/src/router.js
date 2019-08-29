@@ -15,11 +15,15 @@ export default new Router({
       component: Home
     },
     {
+      path: "/logout/",
+      name: "logout",
+    },
+    {
       path: "/cancha/:id",
       name: "cancha",
       component: CanchaDetalle,
       props: true
-    }
+    },
     {
       path: "*",
       name: "page-not-found",
