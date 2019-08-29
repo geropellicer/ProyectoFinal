@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import AnswerEditor from "./views/AnswerEditor.vue";
 import Home from "./views/Home.vue";
+import Home2 from "./views/Home2.vue";
 import NotFound from "./views/NotFound.vue";
 import Question from "./views/Question.vue";
 import QuestionEditor from "./views/QuestionEditor.vue";
@@ -15,6 +16,11 @@ export default new Router({
       path: "/",
       name: "home",
       component: Home
+    },
+    {
+      path: "/index",
+      name: "home2",
+      component: Home2
     },
     {
       // with props: true, the slug parameter gets passed as a prop to the component
