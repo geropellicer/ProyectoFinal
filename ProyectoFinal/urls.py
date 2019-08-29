@@ -19,8 +19,7 @@ from django.urls import include, path, re_path
 from django_registration.backends.one_step.views import RegistrationView
 
 from core.views import IndexTemplateView
-from users.forms import CustomUserForm
-
+from usuarios.forms import UsuarioForm
 
 # https://django-registration.readthedocs.io/en/3.0/activation-workflow.html
 
@@ -29,7 +28,7 @@ urlpatterns = [
 
     path("accounts/register/",
          RegistrationView.as_view(
-             form_class=CustomUserForm,
+             form_class=UsuarioForm,
              success_url="/",
              ), name="django_registration_register"), 
 
@@ -39,8 +38,11 @@ urlpatterns = [
     path("accounts/",
          include("django.contrib.auth.urls")),
 
+     path("api/m/",
+         include("mensajeria.api.urls")),
+
     path("api/",
-         include("users.api.urls")),
+         include("usuarios.api.urls")),
 
     path("api/",
          include("questions.api.urls")),

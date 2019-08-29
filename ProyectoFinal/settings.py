@@ -52,8 +52,10 @@ INSTALLED_APPS = [
     'crispy_forms',
     'webpack_loader',
 
-    'users',
-    'questions'
+    'usuarios',
+    'questions',
+
+    'mensajeria',
 ]
 
 MIDDLEWARE = [
@@ -146,8 +148,8 @@ STATICFILES_DIRS = [
 
 # STATIC_ROOT = "" # The absolute path to the directory where collectstatic will collect static files for deployment.
 
-# Custom User Model
-AUTH_USER_MODEL = "users.CustomUser"
+# Modelo del usuario personalizado
+AUTH_USER_MODEL = "usuarios.Usuario"
 
 # django-crispy-forms
 CRISPY_TEMPLATE_PACK = "bootstrap4"
