@@ -56,6 +56,8 @@ INSTALLED_APPS = [
     'questions',
 
     'mensajeria',
+
+    'canchas',
 ]
 
 MIDDLEWARE = [
