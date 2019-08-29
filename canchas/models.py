@@ -4,13 +4,13 @@ from django.db import models
 
 class Cancha(models.Model):
     nombre = models.CharField(max_length=50)
-    codigo = models.CharField(max_length=20)
+    codigo = models.CharField(max_length=20, unique=True)
     TIPOS_CANCHA = (
                         ('Cancha de 11','11'),
-                        ('Cancha de 7 abierta', '7ABIERTA'),
-                        ('Cancha de 5 abierta','5ABIERTA'),
-                        ('Cancha de 7 techada','7TECHADA'),
-                        ('Cancha de 5 techada','5TECHADA'),
+                        ('7ABIERTA', 'Cancha de 7 abierta'),
+                        ('5ABIERTA', 'Cancha de 5 abierta'),
+                        ('7TECHADA', 'Cancha de 7 techada'),
+                        ('5TECHADA', 'Cancha de 5 techada')
                     )
     tipo = models.CharField(max_length=20, choices=TIPOS_CANCHA, default='Cancha de 5 techada')
     tiene_vestuario = models.BooleanField(default=False)

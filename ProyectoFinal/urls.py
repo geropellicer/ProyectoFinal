@@ -26,6 +26,9 @@ from usuarios.forms import UsuarioForm
 urlpatterns = [
     path('admin/', admin.site.urls),
 
+    path("apic/",
+         include("canchas.api.urls")),
+
     path("accounts/register/",
          RegistrationView.as_view(
              form_class=UsuarioForm,
