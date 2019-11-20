@@ -1,0 +1,2 @@
+# vue-django-archetype
+
