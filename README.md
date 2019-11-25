@@ -62,14 +62,16 @@ Los contenedores se puede parar y volver a levantar, o incluso para y borrar, y 
 
 #### Consola dentro de los contenedores
 Para ejecutar una consola dentro de un contenedor (que tiene que estar corriendo), debemos obtener el id del contendor haciendo
-````Docker
+```Docker
 docker container ls
-````
+```
+
+<br>
 
 Una vez que tenemos en mente el ID del contendor al que queremos entrar, hacemos:
-````Docker
+```Docker
 docker container exec -it <ID del contenedor> sh 
-````
+```
 
 *** 
 
