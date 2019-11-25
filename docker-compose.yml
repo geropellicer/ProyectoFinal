@@ -1,0 +1,36 @@
+version: '3.2'
+
+services:
+
+  backend:
+    build:
+      context: .
+      dockerfile: back.Dockerfile
+    image: django-backend:latest
+    ports:
+      - "80:8000"
+    volumes:
+      - type: bind
+        source: ./
+        target: /home/project/
+    networks:
+     - djangovuenet
+
+  frontend:
+    build:
+      context: .
+      dockerfile: front.Dockerfile
+    image: vue-frontend:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - type: bind
+        source: ./
+        target: /home/project/
+    networks:
+      - djangovuenet
+
+networks:
+  djangovuenet:
+    driver: bridge
+  
