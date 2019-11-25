@@ -27,6 +27,16 @@ Docker CE >= 19
 En una carpeta local que seleccionemos para trabajar, abrir una terminal y hacer git clone de este repositorio
 
 
+### Levantar usando Docker Compose
+Esta opción nos permite buildear y levantar dos contenedores por separado con un solo comando. Abajo describimos como funciona internamente y el equivalente si queremos buildear las imágenes por separado.
+```Docker
+docker-compose up
+```
+
+Ahí ya deberíamos tener dos servidores de desarrollo corriendo y podemos saltar al apartado "Todo listo".
+
+
+### Levantar buildeando imágenes y levantando los contenedores por separado 
 
 #### Buildear las imágenes de Docker
 Dentro de la carpeta que se nos crea cuando clonamos el repositorio, tenemos que buildear la imagen para levantar con Docker el Front y el Backend.
@@ -35,8 +45,6 @@ Dentro de la carpeta que se nos crea cuando clonamos el repositorio, tenemos que
 docker image build -t frontvue . -f front.Dockerfile
 docker image build -t backdjango . -f back.Dockerfile
 ```
-
-
 
 #### Levantar los contenedores de Docker
 ```Docker
