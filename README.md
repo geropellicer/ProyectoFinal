@@ -14,12 +14,19 @@
 
 #### Prerequisitos
 Python >=  3.6
+
 Node >= 10
+
 NPM >= 6
+
 Docker CE >= 19
+
+
 
 #### Clonar el repositorio
 En una carpeta local que seleccionemos para trabajar, abrir una terminal y hacer git clone de este repositorio
+
+
 
 #### Buildear las imágenes de Docker
 Dentro de la carpeta que se nos crea cuando clonamos el repositorio, tenemos que buildear la imagen para levantar con Docker el Front y el Backend.
@@ -28,6 +35,8 @@ Dentro de la carpeta que se nos crea cuando clonamos el repositorio, tenemos que
 docker image build -t frontvue . -f front.Dockerfile
 docker image build -t backdjango . -f back.Dockerfile
 ```
+
+
 
 #### Levantar los contenedores de Docker
 ```Docker
@@ -38,14 +47,29 @@ docker container run -d -p 8080:8080 -v $(pwd):/home/project/ frontvue
 Así como está, por defecto expone los puertos locales 80 y 8080 y los mapea con los puertos necesarios de los contenedores de Docker. Si por alguna razón tenemos alguno de estos puertos locales, se puede cambiar  especificar otro. Por ejemplo para exponer nuestro puerto 8888 para el backend haríamos "-p 8888:8000" y en lugar de ir luago a "localhost" iríamos a "localhost:8888". 
 
 
+
 #### Todo listo
-Ya se puede visitar <localhost> (ó <localhost:puerto-del-backend> si hemos especificado un puerto distinto en el contenedor del backend).
+Ya se puede visitar "localhost" (ó "localhost:puerto-del-backend" si hemos especificado un puerto distinto en el contenedor del backend).
 
 Para comprobar que todo está funcionando, podemos hacer cualquier cambio en los archivos de nuestra carpeta local (sea en el Front o en el Back) y se deberían reflejar automáticamente.
 
 Adicionalmente, si se desea ver los logs de cada contenedor, se pueden correr los comandos "docker container run" sin la opción "-d", cada uno en una terminal distinta.
 
 Los contenedores se puede parar y volver a levantar, o incluso para y borrar, y los cambios deberían persistir en nuestra carpeta de trabajo local.
+
+
+
+
+#### Consola dentro de los contenedores
+Para ejecutar una consola dentro de un contenedor (que tiene que estar corriendo), debemos obtener el id del contendor haciendo
+````Docker
+docker container ls
+````
+
+Una vez que tenemos en mente el ID del contendor al que queremos entrar, hacemos:
+````Docker
+docker container exec -it <ID del contenedor> sh 
+````
 
 *** 
 
