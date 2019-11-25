@@ -4,7 +4,7 @@
       <router-link 
         :to="{ name: 'home' }" 
         class="navbar-brand"
-        >Canchitas Cancheras
+        >Canchitas Cancheras :)
       </router-link>
 
       <router-link 
