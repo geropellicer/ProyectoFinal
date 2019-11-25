@@ -11,22 +11,22 @@
                 <p class="card-text mt-3">{{ cancha.descripcion}}</p>
                 
                 <div class="form-check">
-                    <input readonly="true" disabled  class="form-check-input" type="checkbox" :checked="cancha.tiene_vestuarios" id="defaultCheck1">
+                    <input readonly="true" disabled  class="form-check-input" type="checkbox" :checked="cancha.tiene_vestuario" id="defaultCheck1">
                     <label class="form-check-label" for="defaultCheck1">
                         Vestuarios
                     </label>
                 </div>
 
                 <div class="form-check">
-                    <input readonly="true" disabled class="form-check-input" type="checkbox" :checked="cancha.tiene_iluminacion" id="defaultCheck1">
-                    <label class="form-check-label" for="defaultCheck1">
+                    <input readonly="true" disabled class="form-check-input" type="checkbox" :checked="cancha.tiene_iluminacion" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
                         Iluminacion
                     </label>
                 </div>
 
                 <div class="form-check">
-                    <input readonly="true" disabled class="form-check-input" type="checkbox" :cheked="cancha.tiene_cesped_sintetico" id="defaultCheck1">
-                    <label class="form-check-label" for="defaultCheck1">
+                    <input readonly="true" disabled class="form-check-input" type="checkbox" :checked="cancha.tiene_cesped_sintetico" id="defaultCheck3">
+                    <label class="form-check-label" for="defaultCheck3">
                         Cesped sintetico
                     </label>
                 </div>
