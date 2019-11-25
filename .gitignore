@@ -1,13 +1,5 @@
-__pycache__
-**/__pycache__
-__pycache__/**
-**/__pycache__/**
-__pycache__/*
-__pycache__/**
+# Testing DB
 db.sqlite3
-ProyectoFinal/__pycache__/__init__.cpython-37.pyc
-ProyectoFinal/__pycache__/__init__.cpython-37.pyc
-ProyectoFinal/__pycache__/__init__.cpython-37.pyc
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
