@@ -12,6 +12,8 @@
 
 ### Instrucciones
 
+<br>
+
 #### Prerequisitos
 Python >=  3.6
 
@@ -23,10 +25,13 @@ Docker CE >= 19
 
 
 
+<br>
+
 #### Clonar el repositorio
 En una carpeta local que seleccionemos para trabajar, abrir una terminal y hacer git clone de este repositorio
 
 
+<br>
 
 #### Buildear las imágenes de Docker
 Dentro de la carpeta que se nos crea cuando clonamos el repositorio, tenemos que buildear la imagen para levantar con Docker el Front y el Backend.
@@ -37,6 +42,7 @@ docker image build -t backdjango . -f back.Dockerfile
 ```
 
 
+<br>
 
 #### Levantar los contenedores de Docker
 ```Docker
@@ -47,6 +53,7 @@ docker container run -d -p 8080:8080 -v $(pwd):/home/project/ frontvue
 Así como está, por defecto expone los puertos locales 80 y 8080 y los mapea con los puertos necesarios de los contenedores de Docker. Si por alguna razón tenemos alguno de estos puertos locales, se puede cambiar  especificar otro. Por ejemplo para exponer nuestro puerto 8888 para el backend haríamos "-p 8888:8000" y en lugar de ir luago a "localhost" iríamos a "localhost:8888". 
 
 
+<br>
 
 #### Todo listo
 Ya se puede visitar "localhost" (ó "localhost:puerto-del-backend" si hemos especificado un puerto distinto en el contenedor del backend).
@@ -58,15 +65,13 @@ Adicionalmente, si se desea ver los logs de cada contenedor, se pueden correr lo
 Los contenedores se puede parar y volver a levantar, o incluso para y borrar, y los cambios deberían persistir en nuestra carpeta de trabajo local.
 
 
-
+<br>
 
 #### Consola dentro de los contenedores
 Para ejecutar una consola dentro de un contenedor (que tiene que estar corriendo), debemos obtener el id del contendor haciendo
 ```Docker
 docker container ls
 ```
-
-<br>
 
 Una vez que tenemos en mente el ID del contendor al que queremos entrar, hacemos:
 ```Docker
