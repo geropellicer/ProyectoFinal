@@ -85,5 +85,5 @@ docker container exec -it <ID del contenedor> sh
 
 
 
-## Production
-#### 
+## Versión para producción
+https://gitlab.com/devsar/innovation-lab/vue-django-archetype-prod/
