@@ -83,7 +83,20 @@ docker container exec -it <ID del contenedor> sh
 
 *** 
 
+## Notas
+### Si aparece el error:
+"No se puede acceder a este sitio"
+"ERR_CONNECTION_REFUSED"
 
+Podemos revisar los logs del contenedor del backend y veremos que dice:
+    You're accessing the development server over HTTPS, but it only supports HTTP.
+
+Si lo forzamos manualmente a no accceder mediante HTTPS, sino HTTP, debería funcionar bien:
+    http://localhost:80
+
+
+### Sobre el login y register
+Son las únicas dos vistas que están hechas con templates de django. Se pueden encontrar en la carpeta templates/registration y templates/django_registration. 
 
 ## Versión para producción
 https://gitlab.com/devsar/innovation-lab/vue-django-archetype-prod/
