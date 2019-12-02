@@ -56,7 +56,7 @@ urlpatterns = [
     path("api/rest-auth/registration/",
          include("rest_auth.registration.urls")),
 
-    path(r'logout/', LogoutView.as_view(), {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
+    path(r'logout', LogoutView.as_view(), {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
 
     
     re_path(r"^.*$", IndexTemplateView.as_view(), name="entry-point")
