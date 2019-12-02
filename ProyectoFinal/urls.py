@@ -15,6 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path, re_path
+from django.contrib.auth.views import LogoutView
+
+from django.conf import settings
 
 from django_registration.backends.one_step.views import RegistrationView
 
@@ -53,5 +56,8 @@ urlpatterns = [
     path("api/rest-auth/registration/",
          include("rest_auth.registration.urls")),
 
+    path(r'logout/', LogoutView.as_view(), {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
+
+    
     re_path(r"^.*$", IndexTemplateView.as_view(), name="entry-point")
 ]
